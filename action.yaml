@@ -20,8 +20,6 @@ runs:
       with:
         python-version: '3.9'
         cache: 'pip'
-    - run: echo ${{ github.action_path }}
-      shell: bash
     - run: pip install -r ${{ github.action_path }}/.github/scripts/requirements.txt
       shell: bash
     - name: Check Secrets
