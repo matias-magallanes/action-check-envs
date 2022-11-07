@@ -36,11 +36,15 @@ if client.is_authenticated():
             except yaml.YAMLError as exc:
                 print(exc)
     if len(missingSecrets) > 0:
+        print("::"*40)
         print(':: There are differences in Environment Variables and Vault Secrets')
         print(':: Missing Secrets')
         for item in missingSecrets:
             print(item)
+        print("::"*40)
         sys.exit(1)
 else:
+    print("::"*40)
     print(":: Error in Vault authentication")
+    print("::"*40)
     sys.exit(1)
