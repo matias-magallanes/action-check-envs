@@ -16,6 +16,7 @@ runs:
   steps:
     - id: files
       uses: munditrade/get-changed-files@master
+    - uses: actions/checkout@v3
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'
