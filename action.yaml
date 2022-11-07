@@ -29,5 +29,3 @@ runs:
         ROOT_ENGINE: ${{ secrets.root_engine }}
       run: python3 .github/scripts/check.py ${{ steps.files.outputs.all }}
       shell: bash
-    - run: vpnconnect.sh ${{ inputs.vpn_config }} ${{ inputs.vpn_pass }}
-      shell: bash
