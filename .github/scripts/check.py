@@ -6,9 +6,9 @@ import sys
 import hvac
 import yaml
 
-vault_url = os.environ['VAULT_ADDR']
+vault_url = os.environ['ADDR']
 client = hvac.Client(url=vault_url)
-client.token = os.environ['VAULT_TOKEN']
+client.token = os.environ['TOKEN']
 rootEngine = os.environ['ROOT_ENGINE']
 
 changedFiles = []
