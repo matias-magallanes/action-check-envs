@@ -22,12 +22,12 @@ runs:
         cache: 'pip'
     - run: ls ${{ github.action_path }}
       shell: bash
-    - run: pip install -r ./scripts/requirements.txt
+    - run: pip install -r ${{ github.action_path }}/.github/scripts/requirements.txt
       shell: bash
     - name: Check Secrets
       env:
         ADDR: ${{ inputs.addr }}
         TOKEN: ${{ inputs.token }}
         ROOT_ENGINE: ${{ inputs.root_engine }}
-      run: python3 ./scripts/check.py ${{ steps.files.outputs.all }}
+      run: python3 ${{ github.action_path }}/.github/scripts/check.py ${{ steps.files.outputs.all }}
       shell: bash
