@@ -20,6 +20,10 @@ runs:
       with:
         python-version: '3.9'
         cache: 'pip'
+    - run: |
+        ls -last
+        pwd
+      shell: bash
     - run: pip install -r .github/scripts/requirements.txt
       shell: bash
     - name: Check Secrets
