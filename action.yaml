@@ -25,7 +25,7 @@ runs:
     - name: Check Secrets
       env:
         ADDR: ${{ inputs.addr }}
-        TOKEN: ${{ secrets.token }}
-        ROOT_ENGINE: ${{ secrets.root_engine }}
+        TOKEN: ${{ inputs.token }}
+        ROOT_ENGINE: ${{ inputs.root_engine }}
       run: python3 .github/scripts/check.py ${{ steps.files.outputs.all }}
       shell: bash
