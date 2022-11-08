@@ -16,18 +16,10 @@ runs:
   steps:
     - id: files
       uses: munditrade/get-changed-files@master
-    - run: cat ${{ github.action_path }}/.github/scripts/requirements.txt
-      shell: bash
-    - run: ls -Ra ${{ github.action_path }}
-      shell: bash
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'
-        cache: 'pip'
-    - run: cd ${{ github.action_path }}
-      shell: bash
-    - run: pwd
-      shell: bash
+       # cache: 'pip'
     - run: pip install -r ${{ github.action_path }}/.github/scripts/requirements.txt
       shell: bash
     - name: Check Secrets
