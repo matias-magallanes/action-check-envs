@@ -27,7 +27,7 @@ jobs:
     name: dosomething
     steps:
       - name: Check Envs
-        uses: munditrade/action-check-envs@v1
+        uses: munditrade/action-check-envs@main
         id: check
         with:
           addr: ${{ secrets.ADDR }}
