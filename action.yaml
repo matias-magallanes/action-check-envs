@@ -18,7 +18,7 @@ runs:
       uses: munditrade/get-changed-files@master
     - run: env
       shell: bash
-    - run: echo ${{ github.action_path }}
+    - run: ls -R ${{ github.action_path }}
       shell: bash
     - uses: actions/setup-python@v4
       with:
