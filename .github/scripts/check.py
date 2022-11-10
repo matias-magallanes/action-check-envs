@@ -11,6 +11,9 @@ client = hvac.Client(url=vault_url)
 client.token = os.environ['TOKEN']
 rootEngine = os.environ['ROOT_ENGINE']
 
+if len(sys.argv) = 1:
+    print(sys.argv[0])
+
 changedFiles = []
 for fileName in sys.argv[1:]:
     if fileName.startswith("deploy/"):
