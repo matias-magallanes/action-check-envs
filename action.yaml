@@ -16,6 +16,7 @@ runs:
   steps:
     - id: files
       uses: munditrade/get-changed-files@master
+      if: ${{ github.event_name != 'workflow_dispatch' }}
     - uses: actions/setup-python@v4
       with:
         python-version: '3.9'
