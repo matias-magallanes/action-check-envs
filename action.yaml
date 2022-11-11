@@ -11,6 +11,9 @@ inputs:
   root_engine:
     description: 'Root Engine Path'
     required: true
+  service_name:
+    description: 'Service Name to validate envs'
+    required: false
 runs:
   using: "composite"
   steps:
@@ -37,5 +40,5 @@ runs:
         ADDR: ${{ inputs.addr }}
         TOKEN: ${{ inputs.token }}
         ROOT_ENGINE: ${{ inputs.root_engine }}
-      run: python3 ${{ github.action_path }}/.github/scripts/check.py promote ${{ steps.config.outputs.bc_name }} ${{ github.event.inputs.environment }}
+      run: python3 ${{ github.action_path }}/.github/scripts/check.py promote ${{ inputs.service_name }} ${{ github.event.inputs.environment }}
       shell: bash      
